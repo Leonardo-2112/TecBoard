@@ -1,7 +1,9 @@
+import "./campo-formulario.estilos.css"
+
 export function CampoDeFormulario({ children }){
   return(
-    <h2>
+    <fieldset className="campo-form">
       {children}
-    </h2>
+    </fieldset>
   )
 }
