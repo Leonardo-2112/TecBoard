@@ -5,32 +5,33 @@ import { Tema } from './componentes/Tema'
 
 function App() {
 
-  const temas =[
+  const temas = [
     {
-      id:1,
+      id: 1,
       nome: 'front-end'
     },
     {
-      id:2,
+      id: 2,
       nome: 'back-end'
     },
     {
-      id:3,
+      id: 3,
       nome: 'devops'
     },
     {
-      id:4,
+      id: 4,
       nome: 'inteligência artifical'
     },
     {
-      id:5,
+      id: 5,
       nome: 'data science'
     },
     {
-      id:6,
+      id: 6,
       nome: 'cloud'
     },
   ]
+
 
 
   return (
@@ -38,26 +39,18 @@ function App() {
       <header>
         <img src="/logo.png" alt="" />
       </header>
-      <Banner/>
+      <Banner />
       <FormularioDeEvento />
-      <section>
-        <Tema tema={temas[0]}/>
-      </section>
-      <section>
-        <Tema tema={temas[1]}/>
-      </section>
-      <section>
-        <Tema tema={temas[2]}/>
-      </section>
-      <section>
-        <Tema tema={temas[3]}/>
-      </section>
-      <section>
-        <Tema tema={temas[4]}/>
-      </section>
-      <section>
-        <Tema tema={temas[5]}/>
-      </section>
+
+      {/* Percorre o array de objetos passando uma chave unica para cada item do array
+       e renderiza o componente*/}
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item} />
+          </section>
+        )
+      })}
     </main>
   )
 }
